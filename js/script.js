@@ -2,6 +2,7 @@
 
 function titleClickHandler(event){
   event.preventDefault();
+
   const clickedElement = this;
   console.log('Link was clicked!');
   console.log(event);
@@ -32,8 +33,39 @@ function titleClickHandler(event){
   console.log(targetArticle);
 }
 
-const links = document.querySelectorAll('.titles a');
+//przeanalizuj powyższy kod i rozkmiń czego nie rozumiesz
+//wrzucanie deklaracji zmiennych w loop
 
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
+const optArticleSelector = '.post',
+      optTitleSelector = '.post-title',
+      optTitleListSelector = '.titles';
+
+function generateTitleLinks(){
+
+  
+    /* remove contents of titleList */
+
+    /* for each article */
+
+    /* get the article id */
+
+    /* find the title element */
+
+    /* get the title from the title element */
+
+    /* create HTML of the link */
+
+    /* insert link into titleList */
+  
+  const links = document.querySelectorAll('.titles a');
+
+  for(let link of links){
+    link.addEventListener('click', titleClickHandler);
+  }
 }
+
+generateTitleLinks(); 
+
+
+
+
