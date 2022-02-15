@@ -35,10 +35,10 @@ function titleClickHandler(event) {
 
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
-  optTitleListSelector = '.titles',
-  optArticleTagsSelector = '.post-tags .list';
+  optTitleListSelector = '.titles';
 
-function generateTitleLinks () {
+
+function generateTitleLinks() {
   /* remove contents of titleList */
   const titleList = document.querySelector(optTitleListSelector);
 
@@ -75,4 +75,3 @@ function generateTitleLinks () {
 
 generateTitleLinks();
 //watch:eslint jak zapisać task
-
