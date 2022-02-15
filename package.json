@@ -18,15 +18,15 @@
         "build-dev": "npm-run-all build-dev:sass build:autoprefixer",
         "build-dev:sass": "sass --style=expanded --source-map sass:css",
         "watch": "npm-run-all build:* build-dev -p watch:*",
-        "watch:browsersync": "browser-sync-start --server --files \"css/*.css\" \"*.html\" \"js/*.js\"",
-        "watch:sassprefixer": "onchange sass/*.scss -- npm run build-dev" 
+        "watch:browsersync": "browser-sync start --server --files \"css/.css\" \".html\" \"js/*.js\"",
+        "watch:sassprefixer": "onchange sass/*.scss -- npm run build-dev"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
         "autoprefixer": "^10.2.4",
-        "browser-sync": "^2.26.3",
+        "browser-sync": "^2.27.7",
         "eslint": "^8.8.0",
         "html-validate": "^2.8.0",
         "mkdirp": "^0.5.1",
