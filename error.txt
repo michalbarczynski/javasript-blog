@@ -1,0 +1,29 @@
+6.
+104: prefix + classnumber
+124: id: tag, title: tag
+138: .list .list-horizontal
+
+usunąć tag który jest tylko kosnolowany
+
+chyba źle = źle
+usunąć całość link234
+
+151-153 wyjebać
+
+zwiększyć ilość autorów liczebnie
+
+
+DLA AMBITNYCH
+Event delegation, event target
+
+
+
+
+7.
+mniejsze odstępy w funkji
+
+nowe repo katalog wcześniej
+
+62-64: render, get, init
+105 select --> thisproduct.element
+112 thisproduct.element --> document
