@@ -106,3 +106,36 @@ body {
 .post-tags p {
   margin: 0 10px 0 0;
 }
+
+.tag-size-1 {
+  font-size: 85%;
+  color: #090249;
+}
+
+.tag-size-2 {
+  font-size: 110%;
+  color: #008ba3;
+}
+
+.tag-size-3 {
+  font-size: 130%;
+  color: #009130;
+}
+
+.tag-size-4 {
+  font-size: 160%;
+  color: #1708e4;
+}
+
+.tag-size-5 {
+  font-size: 200%;
+  color: #400386;
+}
+
+.tags li, .authors li {
+  display: inline-block;
+}
+
+.tags li a, .authors li a {
+  text-decoration: none;
+}

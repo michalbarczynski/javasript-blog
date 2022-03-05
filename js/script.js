@@ -89,7 +89,7 @@ function calculateTagClass(count, params){
   const percentage = normalizedCount / normalizedMax;
   const classNumber = Math.floor( percentage * (opts.classCount - 1) + 1 );
 
-  return classNumber + opts.classPrefix;
+  return  opts.classPrefix + classNumber;
 }
 
 function generateTags() {
@@ -105,7 +105,7 @@ function generateTags() {
     const articleTagsArray = articleTags.split(' ');
 
     for (let tag of articleTagsArray) {
-      const linkHTMLData = {id:tag, title:tag};
+      const linkHTMLData = {id:'tag-' + tag, title:tag};
       const linkHTML = templates.articleTagLink(linkHTMLData);
 
       allTagsHTML += linkHTML;
@@ -121,14 +121,12 @@ function generateTags() {
   console.log('tagsParams:', tagsParams);
 
   const allTagsData = {tags:[]};
-  console.log(allTagsData);
 
   //O CO CHODZI W TEJ PETLI
   for (let tag in allTags) {
 
     allTagsData.tags.push({
       tag: tag,
-      count: allTags[tag],
       className: calculateTagClass(allTags[tag], tagsParams)
     });
   }
@@ -188,14 +186,6 @@ function calculateAuthorsParams(authors){
 
 }
 
-function calculateAuthorsClass(countAuthor, paramsAuthor){
-  const normalizedCount = countAuthor - paramsAuthor.min;
-  const normalizedMax = paramsAuthor.max - paramsAuthor.min;
-  const percentage = normalizedCount / normalizedMax;
-  const classNumber = Math.floor( percentage * (opts.classCount - 1) + 1 );
-
-  return classNumber + opts.classPrefix;
-}
 
 function generateAuthors() {
   let allAuthors = {};
@@ -221,8 +211,7 @@ function generateAuthors() {
 
     allAuthorsData.authors.push({
       author: author,
-      count: allAuthors[author],
-      className: calculateAuthorsClass(allAuthors[author], authorParams)
+      className: calculateTagClass(allAuthors[author], authorParams)
     });
   }
 
@@ -255,7 +244,6 @@ function addClickListenersToAuthors() {
 
   for (let link of authorLinks) {
     link.addEventListener('click', authorClickHandler);
-    console.log(link);
   }
 }
 addClickListenersToAuthors();
