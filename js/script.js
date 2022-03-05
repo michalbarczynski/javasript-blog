@@ -46,12 +46,7 @@ function titleClickHandler(event) {
 
 function generateTitleLinks(customSelector = '') {
   const titleList = document.querySelector(opts.titleListSelector);
-
-  function clearMessages() {
-    titleList.innerHTML = '';
-  }
-  clearMessages();
-
+  titleList.innerHTML = '';
   const articles = document.querySelectorAll(opts.articleSelector + customSelector);
   let html = '';
 
@@ -61,8 +56,6 @@ function generateTitleLinks(customSelector = '') {
     const articleTitle = article.querySelector(opts.titleSelector).innerHTML; //przeanalizować tę linię
     const linkHTMLData = {id: articleId, title: articleTitle};
     const linkHTML = templates.articleLink(linkHTMLData);
-
-
     //titleList.insertAdjacentHTML('beforebegin', linkHTML); <--- ten sytnax, co ja miałem tym zrobić
     html = html + linkHTML;
   }
@@ -211,7 +204,7 @@ function generateAuthors() {
   for (let article of articles) {
     const authorsWrapper = article.querySelector(opts.articleAuthorsSelector);
     const articleAuthors = article.getAttribute('data-author');
-    const linkHTMLData = {id: authorsWrapper, title: articleAuthors};
+    const linkHTMLData = {id: articleAuthors, title: articleAuthors};
     const linkHTML = templates.articleAuthorLink(linkHTMLData);
 
     authorsWrapper.innerHTML = linkHTML;
@@ -248,7 +241,7 @@ function authorClickHandler(event) {
   for (let activeAuthor of activeAuthors) {
     activeAuthor.classList.remove('active');
   }
-
+  //const links = document.querySelectorAll('a[href="' + href + '"]' == href);
   const links = document.querySelectorAll('a[href="' + href + '"]');
 
   for (let link of links) {
@@ -262,6 +255,7 @@ function addClickListenersToAuthors() {
 
   for (let link of authorLinks) {
     link.addEventListener('click', authorClickHandler);
+    console.log(link);
   }
 }
 addClickListenersToAuthors();
