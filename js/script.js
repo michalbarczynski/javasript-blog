@@ -105,7 +105,7 @@ function generateTags() {
     const articleTagsArray = articleTags.split(' ');
 
     for (let tag of articleTagsArray) {
-      const linkHTMLData = {id:'tag-' + tag, title:tag};
+      const linkHTMLData = {id:tag, title:tag};
       const linkHTML = templates.articleTagLink(linkHTMLData);
 
       allTagsHTML += linkHTML;
